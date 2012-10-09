@@ -1,6 +1,11 @@
 class ShopController < ApplicationController
 	
 	def index
-		render :text => "Sklep"
+		@products = Product.all
+  
+	end
+
+	def easy
+		render :text => "that was easy"
 	end
 end
