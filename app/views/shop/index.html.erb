@@ -9,6 +9,25 @@
 	<body>
 		<p><%= salutation %></p>
 		<p>This is an example of how ERb fills out a template.</p>
-		  <b><%= @products[0].name %></b>
+		  <table>
+  			<tr>
+    			<th>Title</th>
+    			<th>Summary</th>
+    			<th></th>
+    			<th></th>
+    			<th></th>
+  			</tr>
+ 
+			<% @products.each do |product| %>
+  			<tr>
+    			<td><%= product.name %></td>
+    			<td><%= product.description %></td>
+    			<td><%= product.price %></td>
+    			<td><%= link_to 'Show', product_path(product)  %></td>
+    			
+  			</tr>
+			<% end %>
+		</table>
+
 	</body>
 </html>

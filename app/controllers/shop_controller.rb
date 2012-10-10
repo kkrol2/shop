@@ -5,7 +5,5 @@ class ShopController < ApplicationController
   
 	end
 
-	def easy
-		render :text => "that was easy"
-	end
+	
 end
