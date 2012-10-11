@@ -1,6 +1,10 @@
 Shop::Application.routes.draw do
 root :to => "shop#index"
+resources :categories do
+  resource :list
+end
 resources :products
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
