@@ -1,6 +1,9 @@
-<b> <%= @category.name %> </b>
-<% 
-  	@category.products.each do |product| %>
+
+<% @categories.each do |category| %>
+
+  <p><b>Nazwa kategorii: <a href=<%= category.name %> ><%= category.name %></a> </b> </p>		
+  <% 
+  	category.products.each do |product| %>
   	<p style="margin-left:50px"><i><a href=<%= '/products/'+product.id.to_s %>><%= product.name %></a></i></p>
   		<div style='margin-left:70px'>
   			
@@ -10,3 +13,5 @@
   	 		</ul>
   	 	</div>
    <% end %>
+  		
+ <% end %>
