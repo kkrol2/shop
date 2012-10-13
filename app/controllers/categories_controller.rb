@@ -8,4 +8,9 @@ class CategoriesController  < ApplicationController
 	def show
 		@category = Category.find_by_name(params[:id])
 	end
+
+	def title
+		'Category' 
+	end
+
 end

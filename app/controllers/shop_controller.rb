@@ -5,5 +5,9 @@ class ShopController < ApplicationController
   
 	end
 
+	def title
+		'Shop' 
+	end
+
 	
 end

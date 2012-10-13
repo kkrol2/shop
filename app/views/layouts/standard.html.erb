@@ -16,6 +16,10 @@
 			</div>
 
 			<div id="content">
+				<b>
+					
+					<%= render :partial => "shared/title", :locals => {:title => controller.title} %>
+				</b>
 				<%= yield -%>
 			</div>
 		
