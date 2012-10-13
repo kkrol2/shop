@@ -1,5 +1,5 @@
 class CreateProducts < ActiveRecord::Migration
-  def create
+  def up
     create_table :products do |t|
       t.string :name
       t.text :description
