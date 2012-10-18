@@ -1,8 +1,12 @@
 Shop::Application.routes.draw do
+
+  devise_for :admins, :controllers => {:registrations => "registrations"}
+
 root :to => "shop#index"
 resources :categories
 resources :products
 resources :shop
+resources :buyers
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

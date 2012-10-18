@@ -14,7 +14,7 @@ p {
    line-height: 150%;
 }
 div#container {
-   width: 760px;
+   width: 1000px;
    margin: 0 auto;
 }
 div#header {
@@ -22,8 +22,11 @@ div#header {
    padding-bottom: 15px;
 }
 div#content {
-   float: left;
-   width: 450px;
+  
+   width: 800px;
+   margin-left: auto ;
+   float:left;
+  margin-right: auto ;
    padding: 10px;
 }
 div#content h3 {
@@ -36,8 +39,12 @@ ul#books li {
    line-height: 140%;
 }
 div#sidebar {
+   background-color: #ececec;
+   float:right;
    width: 200px;
-   margin-left: 480px;
+   height: 200px;
+   margin-right: 100px;
+  
 }
 ul#subjects {
    width: 700px;

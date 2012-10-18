@@ -6,7 +6,7 @@
 		<meta http-equiv="Content-Language" content="en-us" />
 		<title>Sklep</title>
 		<%= stylesheet_link_tag "style" %>
-	</head>
+		<%= javascript_include_tag "application" %>	</head>
 
 	<body id="library">
 		<div id="container">
@@ -18,12 +18,25 @@
 			<div id="content">
 				<b>
 					
-					<%= render :partial => "shared/title", :locals => {:title => controller.title} %>
+					
 				</b>
 				<%= yield -%>
 			</div>
 		
-			<div id="sidebar"></div>
+	
 		</div>
+
+			<div id="sidebar">
+				<div id="admin_panel">
+					<% if admin_signed_in? %>
+					Signed in as <%= current_admin.email %> 
+					<%= link_to "Sign out", destroy_admin_session_path, :method => :delete %>
+					<% else %>
+					<%= link_to "Zaloguj się jako administrator", new_admin_session_path %>
+			<%end%>
+
+				</div>
+			</div>
+		
 	</body>
 </html>
