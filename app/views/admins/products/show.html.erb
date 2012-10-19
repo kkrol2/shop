@@ -1,0 +1,12 @@
+<b> Produkt <%= @product.name %> </b>
+<br />
+<br />
+<ul>
+	<li> Opis: <%= @product.description %> </li>
+	<li> Cena: <%= @product.price %> </li>
+	<li> Kategoria: <%= @product.category.name %> </li>
+</ul>
+<!--<%= link_to "edit", :action => "edit", :id => @product.id %> -->
+
+<%= button_to 'edit', edit_admins_product_path(@product), :method => :get %>
+<%= button_to "delete", admins_product_path(@product), :method => :delete %>

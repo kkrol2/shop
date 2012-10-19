@@ -1,0 +1,7 @@
+Kategoria <%= @category.name %> </b>
+<br />
+<br />
+<%# link_to "edit", :action => "edit", :id => @product.id %> 
+
+<%= button_to 'edit', edit_admins_category_path(@category), :method => :get %>
+<%= button_to "delete", admins_category_path(@category), :method => :delete %>

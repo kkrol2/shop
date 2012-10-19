@@ -1,7 +1,7 @@
 class BuyersController < ApplicationController
-	layout 'standard'
 
-	def index
+
+	def show
 		@buyers = Buyer.all
 	
 	end
