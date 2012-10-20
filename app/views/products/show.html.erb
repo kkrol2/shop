@@ -7,3 +7,6 @@
 	<li> Kategoria: <%= @product.category.name %> </li>
 </ul>
 
+<%= button_to("Do koszyka", {:controller => "orders", :action => "create", :id => @product.id})%>
+
+

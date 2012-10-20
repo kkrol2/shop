@@ -1,0 +1,27 @@
+<%= form_for @buyer, :url => url_for(:controller => 'orders', :action => "complete" ), :method => "POST"  do |f| %>
+  <% if @buyer.errors.any? %>
+  <div id="errorExplanation">
+    <h2><%= pluralize(@buyer.errors.count, "error") %> prohibited
+        this buyer from being saved:</h2>
+    <ul>
+    <% @buyer.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+ 
+  <div class="field">
+    <%= f.label :firstname %><br />
+    <%= f.text_field :firstname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :lastname %><br />
+    <%= f.text_field :lastname %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit "Potwierdź zamówienie" %>
+  </div>
+<% end %>

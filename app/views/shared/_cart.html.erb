@@ -1,6 +1,6 @@
 Twój koszyk:
 <br />
-<% @order.orderItems.each do |orderItem| %>
+<% current_order().orderItems.each do |orderItem| %>
 	</br>
 	<b>Nazwa produktu:</b><%= orderItem.product.name %>
 	<br />
@@ -8,9 +8,5 @@ Twój koszyk:
 	<br />
 	Ilość:<%= orderItem.quantity %>
 	<br />
-	<br />
-
 
 <% end %>
-Kwota do zapłaty <%= @price %> pln
-<%= link_to 'Dokonaj zapłaty', '/orders/pay' %>

@@ -42,8 +42,9 @@ div#sidebar {
    background-color: #ececec;
    float:right;
    width: 200px;
-   height: 200px;
+   min-height: 200px;
    margin-right: 100px;
+   padding: 20px 20px 20px 20px;
   
 }
 ul#subjects {

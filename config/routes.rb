@@ -12,17 +12,24 @@ namespace :admins do
     post "edit"
     get "list", :on => :collection
   end
+
+  resources :orders do
+  end
 end
 
-namespace :order do
-  root :to => "orders#index"
-end
+
 
 root :to => "shop#index"
 resources :categories
 resources :products
 resources :shop
 resources :buyers
+
+resources :orders do
+  post  "addProduct"
+  post  "complete", :on => :collection
+  get "pay", :on => :collection
+end
 
 
 
