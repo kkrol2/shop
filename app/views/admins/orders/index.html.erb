@@ -1,1 +1,16 @@
-dsads
+Zrealizowane zamówienia <br /> <br />
+<% @orders.each do |order| %>
+	Imię kupującego:<%= order.buyer.firstname %>
+	<br />
+	Nazwisko kupującego:<%= order.buyer.lastname %>
+	<br />
+	Zamówione produkty:
+	<br />
+	<% order.orderItems.each do |item| %>
+		<b> Nazwa produktu: </b><%= item.product.name %>
+		<br />
+		<b> Cena produktu: </b><%= item.product.price %>
+		<br />
+	<% end %>
+	</br>
+<% end %>
