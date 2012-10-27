@@ -1,4 +1,4 @@
-class ProductsController  < ApplicationController
+class ProductsController  < ShopController
 
 
 	def show
@@ -9,6 +9,14 @@ class ProductsController  < ApplicationController
 
 	def title
 		'Produkt'
+	end
+
+		 
+
+	def index
+		
+		@q = Product.search(params[:q])
+  
 	end
 
 	

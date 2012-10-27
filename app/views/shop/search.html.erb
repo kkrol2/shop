@@ -1,0 +1,27 @@
+
+		<% if @products.size != 0 %>
+
+			  <table border=1>
+	  			<tr>
+	    			<th>Tytuł</th>
+	    			<th>Opis</th>
+	    			<th>Cena</th>
+	    			<th>Kategoria</th>
+	    			<th>Szczegóły</th>
+	  			</tr>
+
+				<% @products.each do |product| %>
+	  			<tr>
+	    			<td><%= product.name %></td>
+	    			<td><%= product.description %></td>
+	    			<td><%= product.price %></td>
+	          		<td><%= link_to product.category.name, '/categories/'+product.category.name %></td>
+	    			<td><%= link_to 'Show', product_path(product)  %></td>
+	  			</tr>
+				<% end %>
+			</table>
+
+		<% else %>
+			<%=  'Niestety nie posiadamy takiego produktu w ofercie' %>
+
+		<% end %>

@@ -20,6 +20,7 @@ div#container {
 div#header {
    text-align: center;
    padding-bottom: 15px;
+   height: 150px;
 }
 div#content {
   

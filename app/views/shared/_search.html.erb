@@ -1,0 +1,6 @@
+<%= search_form_for getSearchObject, :url => url_for(:controller => 'shop', :action => "search" ), :method => "GET" do |f| %>
+    <%= f.text_field :name_cont, :size => "15"%>
+    <%= f.submit "Search"%>
+<% end %>
+<%= link_to "Wyszukiwanie zaawansowane", :action => "search_advanced",:controller => 'shop'%>
+

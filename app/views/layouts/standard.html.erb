@@ -11,8 +11,12 @@
 	<body id="library">
 		<div id="container">
 			<div id="header">
-				<h1>Sklep Kompuetrowy</h1>
-					<h3>U nas najtaniej!</h3>
+				<div style="float:right;">
+					<%= render "shared/search" %>
+				</div>
+				<h1>Sklep Komputerowy <br /><span style="font-size:0.5em;"> U nas najtaniej! </span></h1>
+				
+				
 			</div>
 			 <% if flash[:notice] %>
     			<p class="flash-notice"><%= flash[:notice] %></p>

@@ -22,8 +22,12 @@ end
 root :to => "shop#index"
 resources :categories
 resources :products
-resources :shop
 resources :buyers
+
+resources :shop do
+  get "search", :on => :collection
+  get "search_advanced", :on => :collection
+end
 
 resources :orders do
   post  "addProduct"
