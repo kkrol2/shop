@@ -19,5 +19,6 @@
 			<% end %>
    
 		</table>
+    <%= paginate @products, :outer_window => 3 %>
     <br />
     <%= link_to "Nowy produkt",new_admins_product_path %>

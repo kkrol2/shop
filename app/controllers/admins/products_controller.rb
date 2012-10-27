@@ -39,7 +39,7 @@ class Admins::ProductsController  < Admins::AdminsController
   end
 
   def list
-    @products = Product.all
+    @products = Product.page(params[:page])
   end
 
    def destroy

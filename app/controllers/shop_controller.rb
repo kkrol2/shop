@@ -12,7 +12,7 @@ class ShopController < ApplicationController
 
 	def search	
 		@q = Product.search(params[:q])
-		@products = @q.result(:distinct => true).first(10)
+		@products = @q.result.page(params[:page])
 	end
 
 	def getSearchObject

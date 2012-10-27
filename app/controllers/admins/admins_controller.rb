@@ -1,4 +1,5 @@
 class Admins::AdminsController < ApplicationController
+	layout 'admin'
 	before_filter :logged_in
 
 	def index

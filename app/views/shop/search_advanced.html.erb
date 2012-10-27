@@ -1,13 +1,21 @@
 <b>Wyszukiwanie zaawansowane.<b>
 <br />
+<br />
 <%= search_form_for getSearchObject, :url => url_for(:controller => 'shop', :action => "search" ), :method => "GET" do |f| %>
-	Nazwa:
+	<label  style="width:90px;display:inline-block;"> Nazwa: </label> 
     <%= f.text_field :name_cont, :size => "15"%>
+    <br />
+    <label style="width:90px;display:inline-block;">Opis:</label> 
+    <%= f.text_field :description_cont, :size => "15"%>
      <div class="field">
-    	<%= f.label :price_gteq, "Price between" %>
-    	<%= f.text_field :price_gteq %>
-    	<%= f.label :price_lteq, "and" %>
-    	<%= f.text_field :price_lteq %>    
+    	<label style="width:90px;display:inline-block;">Cena między:</label> 
+    	<%= f.text_field :price_gteq, :size => "10" %>
+    	<%= f.label :price_lteq, " - " %>
+    	<%= f.text_field :price_lteq,:size => "10"%>
+    	 
   	</div>
+  	<br /> Kategoria:
+  	<%= f.collection_select :category_name_cont, Category.all, :name, :name, {},  %>
+  	<br />
     <%= f.submit "Search"%>
 <% end %>

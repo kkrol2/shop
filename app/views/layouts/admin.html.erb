@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; .charset=iso-8859-1" />
+		<meta http-equiv="Content-Language" content="en-us" />
+		<title>Sklep</title>
+		<%= stylesheet_link_tag "style" %>
+		<%= javascript_include_tag "application" %>	</head>
+
+	<body id="library">
+		<div id="container">
+			<div id="header">
+			
+				<h1>Sklep Komputerowy <br /><span style="font-size:0.5em;"> U nas najtaniej! </span></h1>
+				
+				
+			</div>
+			 <% if flash[:notice] %>
+    			<p class="flash-notice"><%= flash[:notice] %></p>
+  			<% end %>
+
+			<div id="content">
+				<b>
+					
+					
+				</b>
+				<%= yield -%>
+			</div>
+		
+	
+		</div>
+
+			<div id="sidebar">
+				<div id="admin_panel">
+					<% if admin_signed_in? %>
+					Signed in as <%= current_admin.email %> 
+					<%= link_to "Sign out", destroy_admin_session_path, :method => :delete %>
+					<% else %>
+					<%= link_to "Zaloguj się jako administrator", new_admin_session_path %>
+			<%end%>
+
+				</div>
+				<br />
+				<%= render "shared/cart" %>
+			</div>
+		
+	</body>
+</html>
