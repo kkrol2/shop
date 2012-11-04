@@ -1,12 +1,5 @@
 class Admins::CategoriesController  < Admins::AdminsController
 
-
-
-
-
-
-
-
 	def new
 		@category = Category.new
 	end

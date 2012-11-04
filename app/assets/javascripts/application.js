@@ -10,6 +10,15 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
+//= require base
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require jquery.json-2.3.min
+//= require uuid
+//= require jstorage.min
+//= require underscore
+//= require sugar-1.3.min
+//= require handlebars-1.0.0.beta.6
+//= require YouAreDaBomb
+//= require app
+

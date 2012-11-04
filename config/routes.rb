@@ -17,6 +17,10 @@ namespace :admins do
   end
 end
 
+namespace :spa do
+  root :to => "spa#index"
+  match 'getAllData' => 'spa#getAllData'
+end
 
 
 root :to => "shop#index"
