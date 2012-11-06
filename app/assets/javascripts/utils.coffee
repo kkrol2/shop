@@ -8,6 +8,10 @@ _.defaults this,
   Around: (object, methodName, adviseMethod) ->
     YouAreDaBomb(object, methodName).around(adviseMethod)
 
+  BeforeAll: (object, methodNames, adviseMethod) ->
+    for methodName in methodNames
+      Before(object, methodName, adviseMethod)
+
   AfterAll: (object, methodNames, adviseMethod) ->
     for methodName in methodNames
       After(object, methodName, adviseMethod)

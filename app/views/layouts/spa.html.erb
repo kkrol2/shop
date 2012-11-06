@@ -19,6 +19,12 @@
       </ul>
     </div>
 
+    <div class="search">
+        <h1>Wyszukiwarka</h1>
+        <input id="search_text" type="text" value=""/> <input id="search" type="button" value="Search" />
+        <input type="button" id="advanced_search" value="Advanced Search" />
+
+    </div>
     <div id="header">
         <h1>Sklep Komputerowy <br /><span style="font-size:0.5em;"> U nas najtaniej! </span></h1>
     </div>
@@ -26,7 +32,8 @@
     
 
     <div class="content">
-  
+    <div id="category">
+    </div>
       <table id="products_table"   border=1 style="display:none">
           <tr>
             <th>Tytuł</th>
@@ -42,10 +49,19 @@
           
 
       </table>
-
+      
       <div id="product">
         
       </div>
+
+      <div id="advanced_search_form" class="vertical-form" style="display:none">
+        <br />
+        <label>Nazwa:</label> <input id="search_name" type="text" value=""/> <br />
+        <label>Opis:</label> <input type="text" id="search_description" value=""/> <br />
+        <label>Cena:</label> <input id="search_price_begin" type="text" value=""/>-<input id="search_price_end" type="text" value=""/> <br/>
+        <input type="button" id="advanced_search_submit" value="Search" />
+      </div>
+
     </div>
   
 	
@@ -59,7 +75,7 @@
               <td>{{name}}</td>
               <td>{{description}}</td>
               <td>{{price}}</td>
-              <td>{{category.name}}</td>
+              <td><input type="button" class="category_show" id="{{category.id}}" value="{{category.name}}" /></td>
               <td><input type="button" class="product_show" id="{{id}}" value="Pokaż szczegóły" /></td>
             </tr>
   </script>
@@ -71,6 +87,10 @@
               <li>{{price}}</li>
               <li>{{category.name}}</li>
             </ul>
+  </script>
+
+  <script type="x-handlebars-template" id="category_template">
+            <h1> {{name}} </h1>
   </script>
 <%= javascript_include_tag "application" %>      
 </body>

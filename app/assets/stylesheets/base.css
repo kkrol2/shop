@@ -29,6 +29,21 @@ button {
 	font-smoothing: antialiased;
 }
 
+.vertical-form label {
+	width:80px;
+	display:inline-block;
+}
+
+.search{
+	float:right;
+	width:300px;
+	margin-top: 100px;
+}
+.search h1{
+	font-size: 1.5em;
+}
+
+
 body {
 	background: #eaeaea url('bg.png');
 }

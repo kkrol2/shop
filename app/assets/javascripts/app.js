@@ -22,7 +22,7 @@ __t = function(ns) {
 
 
 document.write('<scri'+'pt src="/assets/utils.js?body=1"></scr'+'ipt>')
-document.write('<scri'+'pt src="/assets/local_storage.js?body=1"></scr'+'ipt>')
+document.write('<scri'+'pt src="/assets/my_storage.js?body=1"></scr'+'ipt>')
 document.write('<scri'+'pt src="/assets/todo_use_case.js?body=1"></scr'+'ipt>')
 document.write('<scri'+'pt src="/assets/todo_gui.js?body=1"></scr'+'ipt>')
 document.write('<scri'+'pt src="/assets/web_glue.js?body=1"></scr'+'ipt>')

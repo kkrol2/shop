@@ -1,23 +1,43 @@
 class @WebGui
   constructor: ->
     $("#show_all_products").click( => @showAllProducts() )
+    $("#advanced_search").click( => @showAdvancedSearchForm() )
+    $("#advanced_search_submit").click( => @advancedSearchSubmit() )
+    $("#search").click( => @search($('#search_text').attr('value')) )
+
 
   showProducts: (products) =>
    for product in products
       $("#products").append(@createElementFor(product,"#products_template"))
-   $(".product_show").click((e) => @showProduct($(e.currentTarget).attr('id')))
+   
   
   showProductsTable: =>
     $("#products_table").show()
-   
+
+  showAdvancedSearchForm: =>
+    $("#advanced_search_form").show()   
+
+  hideAdvancedSearchForm: =>
+    $("#advanced_search_form").hide()
+
+  advancedSearchSubmit: =>
+    form_data = { name: $('#search_name').attr('value'),description: $('#search_description').attr('value'),price_start: $('#search_price_begin').attr('value'),price_end: $('#search_price_end').attr('value') }
+    @advancedSearch(form_data)
+
+  advancedSearch: (data) => 
 
   hideProductsTable: =>
     $("#products_table").hide()
 
   showProduct: (product_id) =>
-
+  showCategory: (category_id) =>
   showProductGui: (product) =>
     $("#product").html(@createElementFor(product,"#product_template"))
+  showCategoryGui: (category) =>
+    @showProductsTable()
+    $("#category").html(@createElementFor(category,"#category_template"))
+    for product in category.products
+      $("#products").append(@createElementFor(product,"#products_template"))
 
   createElementFor: (data,templateId) =>
     source = $(templateId).html();
@@ -26,9 +46,25 @@ class @WebGui
 
   showAllProducts: =>
 
+  search: (text) =>
+
+  searchGui: (products) =>
+    @showProductsTable()
+    for product in products
+      $("#products").append(@createElementFor(product,"#products_template"))
+
+
+  enableClicks: =>
+    $(".product_show").click((e) => @showProduct($(e.currentTarget).attr('id')))
+    $(".category_show").click((e) => @showCategory($(e.currentTarget).attr('id')))
+
   refreshUi: =>
+    @hideProductsTable()
+    @hideAdvancedSearchForm()
     $("#product").html("")
     $("#products").html("")
+    $("#category").html("")
+
     
 
   ###
