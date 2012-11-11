@@ -8,7 +8,7 @@ class WebTodoApp
     gui = new WebGui()
     storage = new MyStorage()
     glue = new WebGlue(useCase, gui, storage)
-    useCase.fetchAllData()
+    useCase.fetchAllDataDummy()
 
 
 new WebTodoApp()

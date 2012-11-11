@@ -17,7 +17,14 @@
       <ul>
         <li><input type="button"  id="show_all_products" value="Zobacz wyszystkie produkty" /></li>
       </ul>
+      <div class="cart">
+        <h1>Cart</h1>
+        <div class="ordered_products" id="cartContainer">
+        </div>
+      </div>
     </div>
+
+
 
     <div class="search">
         <h1>Wyszukiwarka</h1>
@@ -34,6 +41,7 @@
     <div class="content">
     <div id="category">
     </div>
+    <div class="box">
       <table id="products_table"   border=1 style="display:none">
           <tr>
             <th>Tytuł</th>
@@ -49,6 +57,7 @@
           
 
       </table>
+    </div>
       
       <div id="product">
         
@@ -87,10 +96,18 @@
               <li>{{price}}</li>
               <li>{{category.name}}</li>
             </ul>
+            <p><input type="button" id="cart" name="{{id}}" value="Dodaj do koszyka" /></p>
   </script>
 
   <script type="x-handlebars-template" id="category_template">
             <h1> {{name}} </h1>
+  </script>
+
+  <script type="x-handlebars-template" id="orderItem_template">
+
+           <li>{{quantity}} {{product.name}} </li>
+            
+
   </script>
 <%= javascript_include_tag "application" %>      
 </body>

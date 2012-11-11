@@ -15,11 +15,16 @@ button {
 	appearance: none;
 }
 
+.cart{
+	float:left;
+	margin-top: 100px;
+}
+
 .content {
 	font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	line-height: 1.4em;
 	color: #4d4d4d;
-	width: 550px;
+	width: 650px;
 	margin: 0 auto;
 	min-height: 600px;
 	-webkit-font-smoothing: antialiased;
@@ -29,9 +34,15 @@ button {
 	font-smoothing: antialiased;
 }
 
+div.box{
+  max-height: 500px;
+  overflow: auto;
+}
+
 .vertical-form label {
 	width:80px;
 	display:inline-block;
+
 }
 
 .search{
@@ -50,14 +61,15 @@ body {
 
 .menu {
 	float:left;
-	margin-left: 100px;
+	margin-left: 50px;
 	margin-top: 100px;
+	width:300px;
 }
 
 
 
 #header {
-	width: 550px;
+	width: 650px;
 	height: 200px;
 	padding-top: 15px;
 	border-radius: inherit;

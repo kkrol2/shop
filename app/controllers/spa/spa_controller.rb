@@ -1,4 +1,4 @@
-class Spa::SpaController < ApplicationController
+class Spa::SpaController < OrdersController
 	layout 'spa'
 
 	def index
@@ -14,6 +14,17 @@ class Spa::SpaController < ApplicationController
   		end
 	end
 
+	def getBuyer
+		j = ActiveSupport::JSON
+		data = [current_buyer(),current_order().orderItems]
+		respond_to do |format|
+    		format.json { render :json => j.encode(data) }
+  		end
+	end
+
+	def addToCart
+		create()
+	end
 
 
 	

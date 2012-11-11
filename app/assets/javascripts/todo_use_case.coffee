@@ -9,13 +9,41 @@ class @CompleteTasksUseCase
     @categories = data[1]
     for i in [0..@products.length-1]
       @products[i] = new Product(@products[i],@categories)
-    @refreshProducts()
 
-  fetchAllData: => 
+  buildCart: =>
+    @showCartDummy(@buyer.orderItems)
+
+  showCartDummy: (orderItems) =>
+
+
+  addToCart: (product_id) => 
+    product = @findProductById(product_id)
+    t = @buyer.orderItems.filter (order_item) =>
+      order_item.product.id == product.id
+    if t.length == 0
+      @buyer.orderItems.push(new OrderItem(@findProductById(product_id)))
+    else
+      for i in [0..@buyer.orderItems.length-1]
+        if @buyer.orderItems[i].product.id == product.id
+          @buyer.orderItems[i].quantity+=1
+
+  setBuyer: (buyer_data) =>
+    @buyer = buyer_data[0]
+    @buyer.orderItems = []
+    orders = buyer_data[1]
+    for orderItem in orders
+      product = @findProductById(orderItem.product_id)
+      @buyer.orderItems.push(new OrderItem(product,orderItem.quantity))
+    @refreshUiDummy() #produkty i koszyk zostaly pobrane
+  fetchAllDataDummy: => 
   getAllProducts: => return @products
   getAllCategories: => return @categories
-  refreshProducts: => 
-  getProduct: (product_id) => @getProductUseCase((@products.filter (product) -> product.id == parseInt(product_id,10))[0])
+  refreshUiDummy: => 
+  findProductById: (product_id) =>
+    return (@products.filter (product) -> product.id == parseInt(product_id,10))[0]
+  getProduct: (product_id) =>
+    product = @findProductById(product_id)
+    @getProductUseCase(product)
   getCategory: (category_id) =>
    category = (@categories.filter (category) -> category.id == parseInt(category_id,10))[0]
    category.products = @products.filter ( (product) -> (product.category_id == category.id))
@@ -60,6 +88,13 @@ class @Product
     if @price >= a && @price <= b
       return true
     return false
+
+
+class @OrderItem
+  constructor: (product,quantity = 1) ->
+    @product = product
+    @quantity = quantity
+
   ###
   completedTasks: => @todoTasks.filter (task) -> task.completed
   remainingTasks: => @todoTasks.filter (task) -> not task.completed

@@ -57,6 +57,9 @@ class @WebGui
   enableClicks: =>
     $(".product_show").click((e) => @showProduct($(e.currentTarget).attr('id')))
     $(".category_show").click((e) => @showCategory($(e.currentTarget).attr('id')))
+    $("#cart").click((e) => @addToCartDummy($(e.currentTarget).attr('name')))
+
+  addToCartDummy: (product_id) =>
 
   refreshUi: =>
     @hideProductsTable()
@@ -64,8 +67,15 @@ class @WebGui
     $("#product").html("")
     $("#products").html("")
     $("#category").html("")
+    $("#cartContainer").html("")
+    @buildCartDummy()
 
-    
+  buildCartDummy: =>   
+
+  showCart: (orderItems) =>
+    for orderItem in orderItems
+      elem = @createElementFor(orderItem,"#orderItem_template")
+      $('#cartContainer').append(elem)
 
   ###
     $("#new-todo").keypress((event) => @keyPressed(event))

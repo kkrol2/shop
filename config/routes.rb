@@ -20,6 +20,8 @@ end
 namespace :spa do
   root :to => "spa#index"
   match 'getAllData' => 'spa#getAllData'
+  match 'getBuyer' => 'spa#getBuyer'
+  match 'addToCart' => 'spa#addToCart'
 end
 
 
