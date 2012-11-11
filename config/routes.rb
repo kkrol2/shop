@@ -22,6 +22,7 @@ namespace :spa do
   match 'getAllData' => 'spa#getAllData'
   match 'getBuyer' => 'spa#getBuyer'
   match 'addToCart' => 'spa#addToCart'
+  match 'payForCart' => 'spa#payForCart'
 end
 
 

@@ -4,12 +4,24 @@ class @WebGui
     $("#advanced_search").click( => @showAdvancedSearchForm() )
     $("#advanced_search_submit").click( => @advancedSearchSubmit() )
     $("#search").click( => @search($('#search_text').attr('value')) )
+    $("#buy_button").click( => @show_buy_form() )
+    $("#pay_button").click( => @pay($('#firstname').attr('value'),$('#secondname').attr('value')) )
 
+
+  pay: (firstname,secondname) =>
+
+  show_buy_form: =>
+    $('#buy_form').show()
+
+  hide_buy_form: =>
+    $('#buy_form').hide()
 
   showProducts: (products) =>
    for product in products
       $("#products").append(@createElementFor(product,"#products_template"))
    
+  showConfirmed: (buyer) =>
+    $('#buyer').append(@createElementFor(buyer,'#buyer_template'))
   
   showProductsTable: =>
     $("#products_table").show()
@@ -64,7 +76,9 @@ class @WebGui
   refreshUi: =>
     @hideProductsTable()
     @hideAdvancedSearchForm()
+    @hide_buy_form()
     $("#product").html("")
+    $("#buyer").html("")
     $("#products").html("")
     $("#category").html("")
     $("#cartContainer").html("")

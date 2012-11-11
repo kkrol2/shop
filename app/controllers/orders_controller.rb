@@ -54,6 +54,7 @@ class OrdersController < ShopController
       order.confirmed = true
       order.update_attributes(params[:order])
       reset_order
+      reset_buyer
     end
 
 

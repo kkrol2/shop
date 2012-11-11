@@ -39,7 +39,7 @@ div.box{
   overflow: auto;
 }
 
-.vertical-form label {
+label {
 	width:80px;
 	display:inline-block;
 

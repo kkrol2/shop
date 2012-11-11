@@ -21,6 +21,7 @@
         <h1>Cart</h1>
         <div class="ordered_products" id="cartContainer">
         </div>
+        <input type="button" id="buy_button" value="Zapłać" />
       </div>
     </div>
 
@@ -39,6 +40,13 @@
     
 
     <div class="content">
+    <div id="buy_form" style="display:none">
+      <p><b>Podaj swoje dane</b></p>
+      <label> Imię: </label> <input type="text" id="firstname"/> <br />
+      <label> Nazwisko: </label> <input type="text" id="secondname"/>
+      <input type="button" value="Submit" id="pay_button" />
+    </div>
+    <div id="buyer"> </div>
     <div id="category">
     </div>
     <div class="box">
@@ -109,6 +117,13 @@
             
 
   </script>
-<%= javascript_include_tag "application" %>      
+
+  <script type="x-handlebars-template" id="buyer_template">
+
+           <p>Dziękujemy za zakupy <i> {{firstname}} {{lastname}} </i>!</p>
+            
+
+  </script>
+<%= javascript_include_tag "spa" %>      
 </body>
 </html>

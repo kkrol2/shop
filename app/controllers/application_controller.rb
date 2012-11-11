@@ -36,6 +36,10 @@ class ApplicationController < ActionController::Base
       session[:order] = nil
     end
 
+    def reset_buyer
+      session[:buyer] = nil
+    end
+
 
 
 

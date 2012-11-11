@@ -26,6 +26,19 @@ class Spa::SpaController < OrdersController
 		create()
 	end
 
+	def payForCart
+		j = ActiveSupport::JSON
+
+		buyer = current_buyer()
+		buyer.firstname = params[:firstname]
+		buyer.lastname = params[:secondname]
+		buyer.update_attributes(params[:buyer])
+		realise_buy
+		respond_to do |format|
+    		format.json { render :json => j.encode('success') }
+  		end
+	end
+
 
 	
 end

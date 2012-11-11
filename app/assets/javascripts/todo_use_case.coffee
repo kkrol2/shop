@@ -36,9 +36,13 @@ class @CompleteTasksUseCase
       @buyer.orderItems.push(new OrderItem(product,orderItem.quantity))
     @refreshUiDummy() #produkty i koszyk zostaly pobrane
   fetchAllDataDummy: => 
+  getBuyer: =>
+    return @buyer
   getAllProducts: => return @products
   getAllCategories: => return @categories
   refreshUiDummy: => 
+  orderSuccessFull: =>
+    @buyer.orderItems = []
   findProductById: (product_id) =>
     return (@products.filter (product) -> product.id == parseInt(product_id,10))[0]
   getProduct: (product_id) =>
@@ -62,6 +66,10 @@ class @CompleteTasksUseCase
   searchUseCase: (products) =>
 
   advancedSearchUseCase: (products) =>
+
+  pay: (firstname,secondname) =>
+    @buyer.firstname = firstname
+    @buyer.lastname = secondname
 
 class @Product
   constructor: (product,categories) ->

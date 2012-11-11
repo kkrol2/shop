@@ -14,3 +14,16 @@ class @MyStorage
 
   checkIfSuccess: (data) =>
     alert "success"
+
+  pay: (buyer) =>
+    $.ajax({
+      url: "/spa/payForCart",
+      type: "GET",
+      data: 'firstname='+buyer.firstname+'&secondname='+buyer.lastname,
+      success: @paidSuccessfull
+    });
+
+  paidSuccessfull: =>
+
+
+
